@@ -1,7 +1,7 @@
 import express from 'express';
 import { json } from 'body-parser';
-import eventRoutes from './routes/event-routes';
-import errorHandler from './utils/error-handling';
+import eventRoutes from './routes/event-routes.js';
+import errorHandler from './utils/error-handling.js';
 
 const app = express();
 

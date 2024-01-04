@@ -1,4 +1,4 @@
-import { getAllEvents, addOrUpdateEvent } from '../services/event-service';
+import { getAllEvents, addOrUpdateEvent } from '../services/event-service.js';
 
 /**
  * Get all events.

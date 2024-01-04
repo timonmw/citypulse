@@ -1,5 +1,5 @@
-import Event from '../models/event';
-import { NotFoundError } from '../utils/error-handling';
+import Event from '../models/event.js';
+import { NotFoundError } from '../utils/error-handling.js';
 
 export async function getAllEvents() {
   const events = await Event.find({});
