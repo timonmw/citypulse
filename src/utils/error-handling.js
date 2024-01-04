@@ -25,5 +25,5 @@ class BadRequestError extends Error {
     res.status(statusCode).json({ error: message });
   };
   
-  module.exports = { BadRequestError, NotFoundError, InternalServerError, errorHandler };
+  export default { BadRequestError, NotFoundError, InternalServerError, errorHandler };
   

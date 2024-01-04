@@ -1,15 +1,15 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const eventRoutes = require('./routes/event-routes');
-const { errorHandler } = require('./utils/error-handler');
+import express from 'express';
+import { json } from 'body-parser';
+import eventRoutes from './routes/event-routes';
+import errorHandler from './utils/error-handling';
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(json());
 
 // Event routes
 app.use('/events', eventRoutes);
 
 app.use(errorHandler);
 
-module.exports = app;
+export default app;

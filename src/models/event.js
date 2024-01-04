@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import { Schema, model } from 'mongoose';
 
-const eventSchema = new mongoose.Schema({
+const eventSchema = new Schema({
       "eventId": "unique_event_id", // Eindeutige ID für das Event
       "title": "Event Title", // Titel des Events
       "description": "Event Description", // Beschreibung des Events
@@ -30,4 +30,4 @@ const eventSchema = new mongoose.Schema({
       "updatedAt": "2024-01-01T00:00:00" // Datum der letzten Aktualisierung
 });
 
-module.exports = mongoose.model('Event', eventSchema);
+export default model('Event', eventSchema);
