@@ -1,4 +1,5 @@
 import Event from '../models/event.js';
+import { NotFoundError } from '../utils/error-handling.js';
 
 /**
  * Returns all events
@@ -7,7 +8,7 @@ import Event from '../models/event.js';
  */
 const getAllEvents = async () => {
   const events = await Event.find({});
-  if (!events) {
+  if (!events?.length) {
     throw new NotFoundError('Keine Events gefunden');
   }
   return events;

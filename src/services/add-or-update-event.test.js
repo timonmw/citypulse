@@ -3,8 +3,6 @@ import Event from '../models/event.js';
 import { InputError } from '../utils/error-handling.js';
 import { jest } from '@jest/globals'
 
-
-
 describe('addOrUpdateEvent', () => {
 
   it('should throw an error if validation fails', async () => {
