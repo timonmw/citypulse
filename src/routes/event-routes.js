@@ -1,8 +1,9 @@
-import { Router } from 'express';
-import { getAllEvents, addOrUpdateEvent } from '../controllers/event-controller.js';
-const router = Router();
+import express from 'express';
+import { handleGetAllEvents, handleAddOrUpdateEvent } from '../controllers/event-controller.js';
 
-router.get('/', getAllEvents);
-router.post('/', addOrUpdateEvent);
+const router = express.Router();
+
+router.get('/', handleGetAllEvents);
+router.post('/', handleAddOrUpdateEvent);
 
 export default router;
