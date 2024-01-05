@@ -1,8 +1,6 @@
 import { Schema, model } from 'mongoose';
-import { v4 as uuidv4 } from 'uuid'
 
 const eventSchema = new Schema({
-  eventId: { type: String, unique: true, required: true, default: uuidv4() },
   title: { type: String, required: true },
   description: { type: String, required: true },
   location: {
@@ -30,5 +28,14 @@ const eventSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
 });
+
+eventSchema.set('toJSON', {
+  transform: function (doc, ret) {
+    ret.id = ret._id.toString();
+    delete ret._id
+    delete ret.__v
+  }
+})
+
 
 export default model('Event', eventSchema);

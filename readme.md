@@ -26,6 +26,7 @@
    ```
 
 4. **Starting the Server**:
+   - (Start Mongo Db with `systemctl start mongod`)
    - Start the server with:
      ```bash
      npm start

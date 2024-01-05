@@ -10,8 +10,8 @@ import { InputError } from '../utils/error-handling.js'
 const addOrUpdateEvent = async (eventData) => {
   validateEventData(eventData)
   if (eventData.id) {
-    if (!await Event.exists({ eventId: eventData.id })) {
-      throw InputError("Ungültige id")
+    if (!await Event.exists({ _id: eventData.id })) {
+      throw new InputError("Ungültige id")
     }
     return Event.findByIdAndUpdate(eventData.id, eventData, { new: true });
   }

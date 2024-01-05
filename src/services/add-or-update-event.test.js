@@ -12,7 +12,7 @@ describe('addOrUpdateEvent', () => {
 
   it('should add a new event if it does not exist', async () => {
     const newEventData = { title: 'New Event', description: 'Description', time: { start: '2024-05-20T18:00:00' } };
-    const newEventDataAfterSave = { ...newEventData, eventId: 'abc' }
+    const newEventDataAfterSave = { ...newEventData, id: 'abc' }
     jest.spyOn(Event.prototype, 'save')
       .mockImplementationOnce(() => Promise.resolve(newEventDataAfterSave))
     await expect(addOrUpdateEvent(newEventData)).resolves.toEqual(newEventDataAfterSave);
